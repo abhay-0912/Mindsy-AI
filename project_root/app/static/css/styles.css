@@ -1,0 +1,107 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #0d0d0d, #1a1a1a);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    animation: pulseBackground 5s infinite alternate ease-in-out;
+}
+
+/* Background Pulse Effect */
+@keyframes pulseBackground {
+    0% { background: #0d0d0d; }
+    100% { background: #1a1a1a; }
+}
+
+/* AI Face & Expressions */
+.ai-box {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin: 30px auto;
+    border-radius: 50%;
+    background: url('/static/images/neutral.png') no-repeat center;
+    background-size: contain;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 0 15px rgba(0, 204, 255, 0.8);
+}
+
+/* Neon Glow Based on AI Mood */
+.happy { box-shadow: 0 0 20px rgba(0, 255, 127, 0.9); }
+.surprised { box-shadow: 0 0 20px rgba(255, 204, 0, 0.9); }
+.thinking { box-shadow: 0 0 20px rgba(255, 69, 0, 0.9); }
+.neutral { box-shadow: 0 0 20px rgba(0, 204, 255, 0.9); }
+
+/* Chat Bubble */
+#chat-bubble {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    width: max-content;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+/* Typing Animation for Chat Bubble */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.typing {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 2s steps(20, end);
+}
+
+/* User Input */
+.input-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+input {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    outline: none;
+    background: #222;
+    color: white;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Response Box */
+#response-box {
+    margin-top: 20px;
+    font-size: 18px;
+    animation: fadeIn 0.3s ease-in-out;
+}
